@@ -26,6 +26,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io' show Platform;
 import 'about.dart';
+import 'dash_board/presenation/dash_home_screen.dart';
 import 'settings.dart';
 import 'person.dart';
 import 'personview.dart';
@@ -54,8 +55,11 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             brightness: Brightness.dark,
           ),
-         // home: MyHomePage(title: 'Face Recognition')),
-         home: FirebaseAuth.instance.currentUser == null ?BlocProvider(create: (context) => LoginCubit(), child: SignInScreen(),): MyHomePage(title: 'Face Recognition')),
+         // app home
+        // home: FirebaseAuth.instance.currentUser == null ?BlocProvider(create: (context) => LoginCubit(), child: SignInScreen(),): MyHomePage(title: 'Face Recognition')),
+         //dash home
+        home: UsersListScreen(),
+    ),
     );
   }
 }
